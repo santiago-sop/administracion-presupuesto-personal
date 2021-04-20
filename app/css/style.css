@@ -1,0 +1,158 @@
+/* Importar fuente Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/* Selector universal */
+*{
+    padding: 0; /*Relleno*/
+    margin: 0 auto;  /*Margen*/
+    box-sizing: border-box; /*Modelo de la caja */
+    font-family: 'Roboto', sans-serif; /*Fuente roboto*/
+}
+/*
+:root {
+    --color-1 : #1976D2 ;
+    --color-2 : #2196f3;
+    --color-3 : #90caf9;
+    --color-4 : #ffffff;
+  }
+  */
+:root{
+    --color-1: #4a148c;
+    --color-2: #27AE60;
+    --color-3: #7e57c2;
+    --color-4: #f3e5f5;
+    --color-5: #ffffff;
+    --color-6: #000000;
+}
+
+/* Titulo */
+.title{
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    background-color: var(--color-1);
+    overflow: auto;
+    color: var(--color-5)
+}
+
+/* Contenedor principal */
+.container-main{
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    background-color: var(--color-4);
+    overflow: auto;
+    color: var(--color-6);
+}
+
+/* .container-balance{
+    float: left;
+    width: 50%;
+}
+
+.container-list{
+    float: left;
+    width: 50%;
+} */
+
+.col{
+    float: left;
+    width: 50%;
+}
+
+/*
+.col h2{
+    text-align: center;
+}
+*/
+
+#button-agregar-operacion{
+    padding: 5px 5px;
+    border: none;
+    float: right;
+    width: 30%;
+    color: var(--color-5);
+    background-color: var(--color-2);
+}
+
+.col ul{
+    list-style: none;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay.active{
+    visibility: visible;
+}
+
+.popup{
+    background-color: var(--color-4);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    padding: 50px;
+    text-align: center;
+    width: 600px;
+    transition: .5s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+
+.popup .btn-close-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: var(--color-3);
+    animation: .3s ease all;
+}
+
+.popup .btn-close-popup:hover{
+    color: var(--color-1);
+}
+
+.popup h2{
+    margin-bottom: 25px;
+}
+
+.popup form .input-container input{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid var(--color-5);
+}
+
+.popup form .btn-submit{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    color: var(--color-5);
+    background: var(--color-3);
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    animation: .3s ease all ;
+}
+
+.popup form .btn-submit:hover{
+    background: var(--color-1);
+}
+
+.popup.active {
+    opacity: 1;
+    transform: scale(1);
+}

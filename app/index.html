@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Administracion de presupuesto personal</title>
+</head>
+<body>
+    <h1 class="title">Presupuesto Personal</h1>
+
+    <div class="container-main">
+        <div class="col left">
+            <h2>Balance</h2>
+            <h2 id="current-balance">$</h2>
+        </div>
+        <div class="col rigth">
+            <h5 class="col">Ultimas operaciones</h5>
+            <button class="col" id="btn-add-operation">Agregar operacion</button>
+            <ul class="col" id="list-operations">
+                <li><span class="concept">Salario</span>
+                    <span class="date">13/04/2021</span>
+                    <span class="amount">$5000</span>
+                    <span class="type">Ingreso</span>
+                </li>
+                <li><span class="concept">Gas Marzo</span>
+                    <span class="date">19/04/2021</span>
+                    <span class="amount">$1000</span>
+                    <span class="type">Egreso</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="overlay" id="overlay">
+             <div class="popup" id="popup">
+                <a href="#" id="btn-close-popup" class="btn-close-popup"><em class="fas fa-times"></em></a>
+                <h2>Agregar operacion</h2>
+                <form id="form-operation">
+                    <div class="input-container">
+                        <!-- <label for="">Operacion: <input type="text" name="concept" id="concept"></label> -->
+                        <input type="text" name="concept" id="concept" placeholder="Concepto">
+                        <!-- <label for="">Monto ($): <input type="number" name="amount" id="amount"></label> -->
+                        <input type="number" name="amount" id="amount" placeholder="Monto">
+                        <!-- <label for="">Fecha: <input type="date" name="date" id="date"></label> -->
+                        <input type="date" name="date" id="date" placeholder="Fecha">
+                        <!-- <label for="">Tipo: <input type="number" name="kind" id="kind"></label> -->
+                        <input type="number" name="kind" id="kind" placeholder="Tipo">
+                    </div>
+                    <input type="submit" class="btn-submit" value="Aceptar" >
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/9934dffbe3.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
