@@ -7,6 +7,14 @@ const getBalances = (req,res)=>{
     })
 }
 
+const getOperation = (req,res)=>{
+    let {id} = req.params;
+    connection_db.query('SELECT * FROM  t_balance WHERE id_balance = ?', [id], (err, results)=>{
+        if(err) throw err;
+        res.send(results)
+    })
+}
+
 const addOperation = (req,res) => {
     //Destructuring
     let {concept,amount,date,kind} = req.body;
@@ -39,6 +47,7 @@ const editOperation = (req,res) => {
 
 module.exports = {
     getBalances,
+    getOperation,
     addOperation,
     deleteOperation,
     editOperation

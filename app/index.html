@@ -12,24 +12,13 @@
 
     <div class="container-main">
         <div class="col left">
-            <h2>Balance</h2>
-            <h2 id="current-balance">$</h2>
+            <h1>Balance</h1>
+            <h1 id="current-balance">$</h1>
+            <button class="btn" id="btn-add-operation">Agregar operacion</button>
         </div>
         <div class="col rigth">
             <h5 class="col">Ultimas operaciones</h5>
-            <button class="col" id="btn-add-operation">Agregar operacion</button>
-            <ul class="col" id="list-operations">
-                <li><span class="concept">Salario</span>
-                    <span class="date">13/04/2021</span>
-                    <span class="amount">$5000</span>
-                    <span class="type">Ingreso</span>
-                </li>
-                <li><span class="concept">Gas Marzo</span>
-                    <span class="date">19/04/2021</span>
-                    <span class="amount">$1000</span>
-                    <span class="type">Egreso</span>
-                </li>
-            </ul>
+            <ul id="list-operations"></ul>
         </div>
 
         <div class="overlay" id="overlay">
@@ -38,19 +27,40 @@
                 <h2>Agregar operacion</h2>
                 <form id="form-operation">
                     <div class="input-container">
-                        <!-- <label for="">Operacion: <input type="text" name="concept" id="concept"></label> -->
                         <input type="text" name="concept" id="concept" placeholder="Concepto">
-                        <!-- <label for="">Monto ($): <input type="number" name="amount" id="amount"></label> -->
                         <input type="number" name="amount" id="amount" placeholder="Monto">
-                        <!-- <label for="">Fecha: <input type="date" name="date" id="date"></label> -->
                         <input type="date" name="date" id="date" placeholder="Fecha">
-                        <!-- <label for="">Tipo: <input type="number" name="kind" id="kind"></label> -->
                         <input type="number" name="kind" id="kind" placeholder="Tipo">
                     </div>
-                    <input type="submit" class="btn-submit" value="Aceptar" >
+                    <input type="submit" id="btn-submit" class="btn-submit" value="Aceptar" >
                 </form>
             </div>
         </div>
+
+        <div class="overlay" id="overlay-options">
+            <div class="popup" id="popup-options">
+                <a href="#" id="btn-close-popup-options" class="btn-close-popup"><em class="fas fa-times"></em></a>
+                <button id="btn-option-modify" class="btn">Modificar operacion</button>
+                <button id="btn-delete" class="btn">Eliminar operacion</button>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay-modify">
+            <div class="popup" id="popup-modify">
+               <a href="#" id="btn-close-popup-modify" class="btn-close-popup"><em class="fas fa-times"></em></a>
+               <h2>Modificar operacion</h2>
+               <form id="form-operation-modify">
+                   <div class="input-container">
+                       <input type="text" name="concept" id="concept-modify" placeholder="Concepto">
+                       <input type="number" name="amount" id="amount-modify" placeholder="Monto">
+                       <input type="date" name="date" id="date-modify" placeholder="Fecha">
+                       <input type="number" name="kind" id="kind-modify" placeholder="Tipo">
+                   </div>
+                   <input type="submit" id="btn-modify" class="btn-submit" value="Modificar" >
+               </form>
+           </div>
+       </div>
+
     </div>
 
     <script src="https://kit.fontawesome.com/9934dffbe3.js" crossorigin="anonymous"></script>

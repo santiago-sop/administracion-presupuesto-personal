@@ -60,24 +60,58 @@
     width: 50%;
 }
 
-/*
-.col h2{
-    text-align: center;
-}
-*/
 
-#button-agregar-operacion{
-    padding: 5px 5px;
+h1{
+    font-size: 6vh;
+    font-weight: bold;
+}
+
+.col.left{
+    width: 40%;
+    font-weight: 600;
+    color: var(--color-2);
+    /* background: var(--color-5); */
+    padding: 0 20px;
+    height: 80px;
+    line-height: 40px;
     border: none;
-    float: right;
-    width: 30%;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.col.right{
+    width: 60%;
+}
+
+.col h5{
+    font-size: 4vh;
+    font-weight: normal;
+}
+
+
+.btn{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
     color: var(--color-5);
-    background-color: var(--color-2);
+    background: var(--color-3);
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .col ul{
     list-style: none;
 }
+
+li{
+    margin-top: 15px;
+}
+
+/* .concept{
+
+} */
 
 .overlay{
     background-color: rgba(0, 0, 0, 0.3);
@@ -145,7 +179,7 @@
     border-radius: 3px;
     font-size: 16px;
     cursor: pointer;
-    animation: .3s ease all ;
+    animation: .3s ease all;
 }
 
 .popup form .btn-submit:hover{

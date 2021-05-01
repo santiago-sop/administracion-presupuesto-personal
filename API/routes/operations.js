@@ -6,6 +6,9 @@ const operationsRouter = express.Router();
 //Ruta para obtener todos los datos de la base de datos ordenados por fecha del mas actual al mas antiguo.
 operationsRouter.get('/',balanceControllers.getBalances)
 
+//Ruta para obtener una operacion especifica
+operationsRouter.get('/operations/:id', balanceControllers.getOperation)
+
 //Ruta para agregar una nueva operacion.
 operationsRouter.post('/operations', balanceControllers.addOperation)
 
