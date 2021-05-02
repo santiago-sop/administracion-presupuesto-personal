@@ -11,13 +11,13 @@
     <h1 class="title">Presupuesto Personal</h1>
 
     <div class="container-main">
-        <div class="col left">
+        <div class="col-left">
             <h1>Balance</h1>
             <h1 id="current-balance">$</h1>
             <button class="btn" id="btn-add-operation">Agregar operacion</button>
         </div>
-        <div class="col rigth">
-            <h5 class="col">Ultimas operaciones</h5>
+        <div class="col-right">
+            <h5>Ultimas operaciones</h5>
             <ul id="list-operations"></ul>
         </div>
 
@@ -30,7 +30,11 @@
                         <input type="text" name="concept" id="concept" placeholder="Concepto">
                         <input type="number" name="amount" id="amount" placeholder="Monto">
                         <input type="date" name="date" id="date" placeholder="Fecha">
-                        <input type="number" name="kind" id="kind" placeholder="Tipo">
+                        <select name="kind" id="kind">
+                            <option value="none" selected disabled hidden>Tipo de operacion</option>
+                            <option value="1">Ingreso</option>
+                            <option value="0">Egreso</option>
+                        </select>
                     </div>
                     <input type="submit" id="btn-submit" class="btn-submit" value="Aceptar" >
                 </form>
@@ -51,10 +55,15 @@
                <h2>Modificar operacion</h2>
                <form id="form-operation-modify">
                    <div class="input-container">
-                       <input type="text" name="concept" id="concept-modify" placeholder="Concepto">
-                       <input type="number" name="amount" id="amount-modify" placeholder="Monto">
-                       <input type="date" name="date" id="date-modify" placeholder="Fecha">
-                       <input type="number" name="kind" id="kind-modify" placeholder="Tipo">
+                        <input type="text" name="concept" id="concept-modify" placeholder="Concepto">
+                        <input type="number" name="amount" id="amount-modify" placeholder="Monto">
+                        <input type="date" name="date" id="date-modify" placeholder="Fecha">
+                        <!-- <input type="number" name="kind" id="kind-modify" placeholder="Tipo"> -->
+                        <select name="kind" id="kind-modify">
+                            <option value="none" selected disabled hidden>Tipo de operacion</option>
+                            <option value="1">Ingreso</option>
+                            <option value="0">Egreso</option>
+                        </select>
                    </div>
                    <input type="submit" id="btn-modify" class="btn-submit" value="Modificar" >
                </form>

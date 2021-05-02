@@ -7,15 +7,9 @@
     margin: 0 auto;  /*Margen*/
     box-sizing: border-box; /*Modelo de la caja */
     font-family: 'Roboto', sans-serif; /*Fuente roboto*/
+    background-color: var(--color-4);
 }
-/*
-:root {
-    --color-1 : #1976D2 ;
-    --color-2 : #2196f3;
-    --color-3 : #90caf9;
-    --color-4 : #ffffff;
-  }
-  */
+
 :root{
     --color-1: #4a148c;
     --color-2: #27AE60;
@@ -40,37 +34,22 @@
     padding: 20px;
     width: 90%;
     margin: auto;
-    background-color: var(--color-4);
+    background-color: var(--color-5);
     overflow: auto;
     color: var(--color-6);
 }
 
-/* .container-balance{
-    float: left;
-    width: 50%;
-}
-
-.container-list{
+/* .col{
     float: left;
     width: 50%;
 } */
 
-.col{
+.col-left{
+    background-color: var(--color-5);
     float: left;
-    width: 50%;
-}
-
-
-h1{
-    font-size: 6vh;
-    font-weight: bold;
-}
-
-.col.left{
     width: 40%;
     font-weight: 600;
     color: var(--color-2);
-    /* background: var(--color-5); */
     padding: 0 20px;
     height: 80px;
     line-height: 40px;
@@ -79,15 +58,73 @@ h1{
     font-size: 16px;
 }
 
-.col.right{
+.col-left h1{
+    background-color: var(--color-5);
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.col-right{
+    background-color: var(--color-5);
+    float: left;
     width: 60%;
 }
 
-.col h5{
-    font-size: 4vh;
+.col-right h5{
+    background-color: var(--color-5);
+    font-size: x-large;
     font-weight: normal;
+    color: var(--color-3);
+    font-weight: bold;
 }
 
+.col-right ul{
+    list-style: none;
+}
+
+.col-right ul li{
+    width: 100%;
+    padding-right: 15px
+}
+
+.col-right ul li .kind{
+    background-color: var(--color-5);
+    width: 5%;
+    margin-top: 3%;
+    float: left;
+    color: var(--color-3);
+}
+
+.col-right ul li .concept{
+    background-color: var(--color-5);
+    font-weight: bold;
+    width: 90%;
+    margin-top: 3%;
+    float: left;
+}
+
+.col-right ul li .option{
+    background-color: var(--color-5);
+    float: right;
+    width: 5%;
+    margin-top: 3%;
+    color: var(--color-3);
+    text-align: end;
+}
+
+.col-right ul li .amount{
+    background-color: var(--color-5);
+    float: left;
+    width: 50%;
+    margin-left: 5%;
+}
+
+.col-right ul li .date{
+    background-color: var(--color-5);
+    float: left;
+    width: 45%;
+    text-align: end;
+}
 
 .btn{
     padding: 0 20px;
@@ -97,21 +134,9 @@ h1{
     color: var(--color-5);
     background: var(--color-3);
     border-radius: 3px;
-    font-size: 16px;
+    font-size: large;
     cursor: pointer;
 }
-
-.col ul{
-    list-style: none;
-}
-
-li{
-    margin-top: 15px;
-}
-
-/* .concept{
-
-} */
 
 .overlay{
     background-color: rgba(0, 0, 0, 0.3);
@@ -160,12 +185,35 @@ li{
 }
 
 .popup form .input-container input{
+    background-color: var(--color-5);
     width: 100%;
     margin-bottom: 20px;
     height: 35px;
     line-height: 35px;
-    font-size: 18px;
+    font-size: large;
     text-align: center;
+    border: 1px solid var(--color-5);
+}
+
+.popup form .input-container select{
+    background-color: var(--color-5);
+    width: 100%;
+    margin-bottom: 20px;
+    height: 35px;
+    line-height: 35px;
+    font-size: large;
+    text-align-last: center;
+    border: 1px solid var(--color-5);
+}
+
+.popup form .input-container select option{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 35px;
+    line-height: 35px;
+    font-size: large;
+    align-content: center;
+    text-align-last: center;
     border: 1px solid var(--color-5);
 }
 
@@ -186,7 +234,36 @@ li{
     background: var(--color-1);
 }
 
+#popup-options{
+    background-color: var(--color-5);
+}
+
+#btn-close-popup-options{
+    background-color: var(--color-5);
+}
+
 .popup.active {
     opacity: 1;
     transform: scale(1);
+}
+
+@media (max-width: 760px){
+    .title{
+        width: 100%;
+    }
+    
+    /* Contenedor principal */
+    .container-main{
+        width: 100%;
+    }    
+}
+
+@media (max-width: 625px){
+    .col-left{
+        width: 100%;
+    }
+
+    .col-right{
+        width: 100%;
+    }
 }

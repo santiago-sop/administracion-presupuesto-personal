@@ -11,24 +11,40 @@ function operationRequest(){
 function operationShow(data){
     //console.log(data.length)
     let operation_list = document.querySelector('#list-operations');
+    operation_list.innerHTML = ''
     for(let i=0;i<10;i++){
         let type;
         let date = new Date(data[i].date)
 
-        if(data[i].kind === 1) type = 'Ingreso'
-        else type = 'Egreso'
+        if(data[i].kind === 1) type = '<i class="kind fas fa-sign-in-alt"></i>'
+        else type = '<i class="kind fas fa-sign-out-alt"></i>'
+
+        const MESES = [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre",
+          ];
         
         let day = date.getDate()
-        let month = date.getMonth() + 1
+        let month = MESES[date.getMonth()]    //date.getMonth() + 1
         let year = date.getFullYear()
+
         
-        // <a href="#" id="id${data[i].id_balance}" class="btn-options" onclick="hola()"><em class="fas fa-ellipsis-v"></em></a>
-        // <i class="fas fa-ellipsis-v" onclick="hola()"></i>
-        operation_list.innerHTML += `<li id="id${data[i].id_balance}"><span class="concept">${data[i].concept}</span>
-                                        <span class="date">$${day}-${month}-${year}</span>
+        operation_list.innerHTML += `<li id="id${data[i].id_balance}">
+                                        ${type}
+                                        <span class="concept">${data[i].concept}</span>
+                                        <i class="option fas fa-ellipsis-v" onclick="showOptions(${data[i].id_balance})"></i>
                                         <span class="amount">$${data[i].amount}</span>
-                                        <span class="type">${type}</span>
-                                        <i class="fas fa-ellipsis-v" onclick="showOptions(${data[i].id_balance})"></i>
+                                        <span class="date">${day}-${month}-${year}</span>
                                     </li>`
     }
 }
@@ -44,7 +60,7 @@ function balanceShow(data){
             balance -= element.amount
         }
     })
-    current_balance.innerHTML += `${balance}`
+    current_balance.innerHTML = `$${balance.toFixed(2)}`
 }
 
 //Call to the functions for show the current balance and the last ten operation
@@ -77,16 +93,19 @@ let btnModify = document.getElementById('btn-modify')
 let btnClosePopupOptions = document.getElementById('btn-close-popup-options')
 
 //Add the events listener to the buttons
+//Button to go to the form to add an operation
 btnAddOperation.addEventListener('click', ()=>{
     overlay.classList.add('active')
     popup.classList.add('active')
 })
 
+//Button to close the form for add an opertation
 btnClosePopup.addEventListener('click', ()=>{
     overlay.classList.remove('active')
     popup.classList.remove('active')
 })
 
+//Button to acept the incertion of a new operation
 btnSubmit.addEventListener('click', ()=>{
     let concept = document.querySelector('#concept').value
     let amount = document.querySelector('#amount').value
@@ -106,16 +125,19 @@ btnSubmit.addEventListener('click', ()=>{
     })
 })
 
-btnClosePopupModify.addEventListener('click', ()=>{
-    overlayModify.classList.remove('active')
-    popupModify.classList.remove('active')
-})
-
+//Button to close the form of posibles option in an operation
 btnClosePopupOptions.addEventListener('click', ()=>{
     overlayOptions.classList.remove('active')
     popupOptions.classList.remove('active')
 })
 
+//Button to close the form for modify an operation
+btnClosePopupModify.addEventListener('click', ()=>{
+    overlayModify.classList.remove('active')
+    popupModify.classList.remove('active')
+})
+
+//Button to show the form for modify an operation
 btnOptionModify.addEventListener('click', ()=>{
     overlayOptions.classList.remove('active')
     popupOptions.classList.remove('active')
@@ -148,6 +170,7 @@ btnOptionModify.addEventListener('click', ()=>{
     })
 })
 
+//Button to delete an operation
 btnDelete.addEventListener('click', ()=>{
     overlayOptions.classList.remove('active')
     popupOptions.classList.remove('active')
@@ -158,6 +181,7 @@ btnDelete.addEventListener('click', ()=>{
     })
 })
 
+//Function who is call from each operation. This function give the posibility of modify or delete an operation
 function showOptions(id){
     currentData.id_balance = id
 
@@ -165,6 +189,7 @@ function showOptions(id){
     popupOptions.classList.add('active')
 }
 
+//Button to acept the modification an operation
 btnModify.addEventListener('click', ()=>{
     let concept = document.querySelector('#concept-modify').value
     let amount = document.querySelector('#amount-modify').value
