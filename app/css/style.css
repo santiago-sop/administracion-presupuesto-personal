@@ -37,6 +37,7 @@
     background-color: var(--color-5);
     overflow: auto;
     color: var(--color-6);
+
 }
 
 /* .col{
@@ -48,14 +49,14 @@
     background-color: var(--color-5);
     float: left;
     width: 40%;
-    font-weight: 600;
     color: var(--color-2);
     padding: 0 20px;
-    height: 80px;
+    /* height: 80px; */
     line-height: 40px;
     border: none;
     border-radius: 3px;
-    font-size: 16px;
+    /* font-size: 16px; */
+    /* font-weight: 600; */
 }
 
 .col-left h1{
@@ -80,11 +81,12 @@
 
 .col-right ul{
     list-style: none;
+    
 }
 
 .col-right ul li{
     width: 100%;
-    padding-right: 15px
+    padding-right: 15px;
 }
 
 .col-right ul li .kind{
@@ -93,14 +95,23 @@
     margin-top: 3%;
     float: left;
     color: var(--color-3);
+    text-align: center;
 }
 
 .col-right ul li .concept{
     background-color: var(--color-5);
     font-weight: bold;
-    width: 90%;
+    width: 55%;
     margin-top: 3%;
     float: left;
+}
+
+.col-right ul li .date{
+    background-color: var(--color-5);
+    float: left;
+    margin-top: 3%;
+    width: 35%;
+    text-align: end;
 }
 
 .col-right ul li .option{
@@ -115,15 +126,8 @@
 .col-right ul li .amount{
     background-color: var(--color-5);
     float: left;
-    width: 50%;
+    width: 95%;
     margin-left: 5%;
-}
-
-.col-right ul li .date{
-    background-color: var(--color-5);
-    float: left;
-    width: 45%;
-    text-align: end;
 }
 
 .btn{
@@ -261,9 +265,11 @@
 @media (max-width: 625px){
     .col-left{
         width: 100%;
+        padding: 0;
     }
 
     .col-right{
         width: 100%;
     }
+     
 }

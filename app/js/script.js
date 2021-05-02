@@ -17,7 +17,7 @@ function operationShow(data){
         let date = new Date(data[i].date)
 
         if(data[i].kind === 1) type = '<i class="kind fas fa-sign-in-alt"></i>'
-        else type = '<i class="kind fas fa-sign-out-alt"></i>'
+        else type = '<i class="kind fas fa-sign-out-alt" style="transform: rotate(180deg);"></i>'
 
         const MESES = [
             "Enero",
@@ -42,9 +42,9 @@ function operationShow(data){
         operation_list.innerHTML += `<li id="id${data[i].id_balance}">
                                         ${type}
                                         <span class="concept">${data[i].concept}</span>
+                                        <span class="date">${day}-${month}-${year}</span>
                                         <i class="option fas fa-ellipsis-v" onclick="showOptions(${data[i].id_balance})"></i>
                                         <span class="amount">$${data[i].amount}</span>
-                                        <span class="date">${day}-${month}-${year}</span>
                                     </li>`
     }
 }
